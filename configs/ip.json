@@ -1,0 +1,49 @@
+{
+  "data": {
+    "name": "Indian Pines",
+    "file": "data/indian_pines_10shot.mat",
+    "patch_size": 17,
+    "raw_channels": 200,
+    "pca_components": 200,
+    "pca_whiten": true,
+    "num_classes": 16,
+    "train_batch_size": 64,
+    "eval_batch_size": 64
+  },
+  "model": {
+    "token_dim": 64,
+    "heads": 20,
+    "head_dim": 64,
+    "depth": 3,
+    "mlp_dim": 8,
+    "dropout": 0.0,
+    "token_dropout": 0.1,
+    "classifier_hidden_dim": 128,
+    "classifier_dropout": 0.1,
+    "ftr": {
+      "dct_coefficients": 32,
+      "dct_scale": 0.5,
+      "kernel_size": 5
+    },
+    "qkr": {
+      "rank": 8,
+      "full_rank_depths": [1, 2],
+      "low_rank_depths": [1],
+      "full_rank_scale": 0.5,
+      "low_rank_scale": 0.5,
+      "gate_init": 0.0
+    },
+    "ctf": {
+      "top_k": 64,
+      "layer": 0
+    }
+  },
+  "training": {
+    "seeds": [0, 1, 2, 3, 4],
+    "epochs": 50,
+    "evaluate_every": 10,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "gradient_clip": 15.0
+  }
+}
